@@ -5,8 +5,8 @@ class CreateKG():
     def __init__(self, doc_matrix_tfidf, topic_map, save_root):
         self.doc_matrix_tfidf = doc_matrix_tfidf
         self.topic_map = topic_map
-        label_encoder = LabelEncoder()
-        self.topic_map['topic_predicted_encoded'] = label_encoder.fit_transform(topic_map['topic_predicted'])
+        self.label_encoder = LabelEncoder()
+        self.topic_map['topic_predicted_encoded'] = self.label_encoder.fit_transform(topic_map['topic_predicted'])
         # Create a knowledge graph using networkx
         self.topic_graph = nx.DiGraph()
         self.ner_model = spacy.load("en_core_web_sm")
@@ -57,3 +57,4 @@ class CreateKG():
             pickle.dump(self.topic_graph, file)
         file.close()
         torch.save(data, os.path.join(self.save_root, 'topic_graph.pt'))
+        joblib.dump(self.label_encoder, os.path.join(self.save_root, 'label_encoder.joblib'))
