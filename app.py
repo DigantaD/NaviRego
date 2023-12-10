@@ -54,3 +54,6 @@ def train():
     return jsonify({
         'trigger_status': True
     })
+
+if __name__ == '__main__':
+    app.run(debug=True)
