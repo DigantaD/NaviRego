@@ -58,4 +58,4 @@ class CreateData():
             topic_map['topic_name'].append(title.strip())
             topic_map['topic_text'].append(paragraph)
         topic_map = pd.DataFrame(topic_map)
-        topic_map.to_csv(os.path.join(self.save_root, 'topic_map.csv'), index_col=False)
+        topic_map.to_csv(os.path.join(self.save_root, 'topic_map.csv'), index=None)

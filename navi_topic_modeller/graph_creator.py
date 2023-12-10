@@ -51,10 +51,8 @@ class CreateKG():
         self.create_nodes()
         self.create_weighted_edges()
         vectorizer_edges, data = self.create_torch_graph()
-        self.topic_map.to_csv(os.path.join(self.save_root, 'topic_map.csv'), index_col=False)
+        self.topic_map.to_csv(os.path.join(self.save_root, 'topic_map.csv'), index=None)
         joblib.dump(vectorizer_edges, os.path.join(self.save_root, 'edges_vectorizer.joblib'))
-        with open(os.path.join(self.save_root, 'topic_graph.pkl'), 'wb') as file:
-            pickle.dump(self.topic_graph, file)
-        file.close()
-        torch.save(data, os.path.join(self.save_root, 'topic_graph.pt'))
+        nx.write_gpickle(self.topic_graph, os.path.join(self.save_root, 'topic_graph.pkl'))
+        torch.save(data, os.path.join(self.save_root, 'topic_graph.pth'))
         joblib.dump(self.label_encoder, os.path.join(self.save_root, 'label_encoder.joblib'))

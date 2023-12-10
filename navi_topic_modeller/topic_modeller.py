@@ -36,4 +36,4 @@ class TopicModeller():
         np.save(os.path.join(self.save_root, 'topic_word_matrix.npy'), topic_word_matrix)
         np.save(os.path.join(self.save_root, 'doc_topic_matrix.npy'), doc_topic_matrix)
         np.save(os.path.join(self.save_root, 'doc_matrix_tfidf.npy'), doc_matrix_tfidf)
-        self.topic_map.to_csv(os.path.join(self.save_root, 'topic_map.csv'), index_col=False)
+        self.topic_map.to_csv(os.path.join(self.save_root, 'topic_map.csv'), index=None)
