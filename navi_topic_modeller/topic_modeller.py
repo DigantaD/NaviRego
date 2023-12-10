@@ -1,4 +1,12 @@
 import os
+from transformers import BertTokenizer, BertModel
+from sklearn.feature_extraction.text import TfidfVectorizer
+from tqdm import tqdm
+import numpy as np
+import pandas as pd
+import torch
+from sklearn.decomposition import NMF
+import joblib
 
 class TopicModeller():
 

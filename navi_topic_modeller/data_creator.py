@@ -1,6 +1,9 @@
 import os
 import openai
 openai.api_key = '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'
+import spacy
+import pandas as pd
+from tqdm import tqdm
 
 class CreateData():
 
@@ -8,7 +11,6 @@ class CreateData():
         self.text_file_path = text_file_path
         self.nlp = spacy.load("en_core_web_sm")
         self.nlp.max_length = 2000000
-        self.ner_model = spacy.load("en_core_web_sm")
         self.save_root = save_root
 
     def chunk_into_paragraphs(self, text):
