@@ -34,7 +34,7 @@ class TopicGraphModel(nn.Module):
 
         return x
 
-class TrainerNetwork(self):
+class TrainerNetwork():
 
     def __init__(self, data, label_encoder):
         self.data = data

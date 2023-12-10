@@ -1,6 +1,5 @@
 import os
 import openai
-openai.api_key = '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'
 import spacy
 import pandas as pd
 from tqdm import tqdm

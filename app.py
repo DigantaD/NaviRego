@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, request
 import requests
 from flask_cors import CORS 
-from decouple import config
+# from decouple import config
 from navi_topic_modeller.data_creator import CreateData
 from navi_topic_modeller.topic_modeller import TopicModeller
 from navi_topic_modeller.graph_creator import CreateKG
@@ -15,7 +15,7 @@ import networkx as nx
 import threading
 
 app = Flask(__name__)
-CORS(app, origins=config('CORS_ALLOWED_ORIGINS', default='*'))
+# CORS(app, origins=config('CORS_ALLOWED_ORIGINS', default='*'))
 
 if os.path.isdir('metadata'):
     pass
