@@ -18,6 +18,7 @@ Following are the steps that have been taken to approach the solution to the pro
 * Model training & Optimizations
 * Retrieval of Topic Category from a singular or multiple texts
 * Usage of the particular Topic nodes and edges and the input text to extract simplified information using ChatGPT-3.5
+* Training Visualization using WandB (Weights & Biases)
 
 # Concepts and Frameworks used
 * OpenAI ChatGPT-3.5-turbo-16K
